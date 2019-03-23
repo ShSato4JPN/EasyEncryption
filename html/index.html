@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="jp">
+    <head>
+        <title>暗号化するよ～</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="../css/reset.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <script type="text/javascript" src="../javascript/EE_script.js"></script>
+        <script type="text/javascript" src="../javascript/Utils.js"></script>
+        <script type="text/javascript" src="../javascript/CaesarCipher.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header id="w-header">
+                <h1>EasyEncryption</h1>
+            </header>
+            <div id="w-contents">
+                <div class="w-c-header">
+                    <table>
+                        <tr>
+                            <td class="w-c-h-td-title">FILE</td>
+                            <td class="w-c-h-td-content">
+                                <div id="w-c-h-file-input-form">
+                                    <input type="text" id="w-c-h-text-file" readonly>
+                                    <label for="w-c-h-filedialog" id="w-c-h-label">
+                                        SELECT
+                                        <input type="file"  id="w-c-h-filedialog" style="display:none;">
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="w-c-h-td-title">SHIFT</td>
+                            <td class="w-c-h-td-content"><input type="text" id="w-c-h-text-shift"></td>
+                        </tr>
+                        <tr>
+                            <td class="w-c-h-td-title">LOOP</td>
+                            <td class="w-c-h-td-content">
+                                <input type="text" id="w-c-h-text-loop">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="w-c-h-td-title">MODE</td>
+                            <td>
+                                <div class="w-c-h-d-content">
+                                    <div id="w-c-h-checkbox-form">
+                                        <input type="radio" id="w-c-h-chk-encode" checked>ENCODE
+                                        <input type="radio" id="w-c-h-chk-decode" >DECODE
+                                        <label for="w-c-h-bf-button" id="w-c-h-bf-label">
+                                            EXECUTE
+                                            <input type="button" id="w-c-h-bf-button" style="display:none;">
+                                        </label>
+                                    </div>
+                        </tr>
+                    </table>
+                </td>
+                </div>
+                <div class="w-c-body">
+                    <textarea name="textarea" id="w-c-b-textarea" rows="50" cols="100" ></textarea>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

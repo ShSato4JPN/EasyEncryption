@@ -1,0 +1,91 @@
+body {
+    background-color: black;
+    font-weight: bold;
+    color: limegreen;
+}
+
+label {
+    font-weight: bold;
+    line-height: 1.0;
+    color:  limegreen;
+}
+
+/***  wrapper ***/
+#wrapper {
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 700px;
+}
+
+
+/***  wrapper -header***/
+#w-header {
+    width: 0 auto;
+    font-size:  50px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/***  wrapper-contens ***/
+#w-contents {
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+
+/*** wrapper-contents-header ***/
+#w-c-header {
+    margin: 0 auto;
+}
+
+.w-c-h-td-title, .w-c-h-td-content {
+    height: 25px;
+}
+
+.w-c-h-td-title {
+    width:  100px;
+}
+
+.w-c-h-td-content {
+    width: 600px;
+}
+
+#w-c-h-file-input-form {
+    padding: 0;
+    margin: 0;
+}
+
+#w-c-h-text-file {
+}
+
+#w-c-h-button {
+    padding: 0;
+    margin: 0;
+}
+
+#w-c-h-label {}
+
+#w-c-h-mode-form {
+    display: flex;
+}
+
+#w-c-h-checkbox-form {
+    width: 400px;
+}
+
+#w-c-h-button-form {
+}
+
+#w-c-h-bf-label {
+    margin-left: 70px;
+}
+
+/*** wrapper-contents-body***/
+#w-c-body {
+    margin: 0 auto;
+}
+
+#w-c-b-textarea {
+    resize:  none;
+    width: 700;
+}
