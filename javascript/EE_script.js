@@ -1,29 +1,28 @@
 /*** EasyEncryptionのロジック ***/
 window.onload = function() {
     // ファイル選択フォーム
-    var input_form = document.getElementById("w-c-h-file-input-form");
+    let input_form = document.getElementById("w-c-h-file-input-form");
     // ファイルのパス
-    var txt_file = document.getElementById("w-c-h-text-file");
+    let txt_file = document.getElementById("w-c-h-text-file");
     // シフト数
-    var txt_shift = document.getElementById("w-c-h-text-shift");
+    let txt_shift = document.getElementById("w-c-h-text-shift");
     // ループ数
-    var txt_loop = document.getElementById("w-c-h-text-loop");
+    let txt_loop = document.getElementById("w-c-h-text-loop");
     // 結果出力
-    var txt_result = document.getElementById("w-c-b-textarea");
+    let txt_result = document.getElementById("w-c-b-textarea");
     // ダイアログボタン
-    var btn_dialog = document.getElementById("w-c-h-label");
+    let btn_dialog = document.getElementById("w-c-h-label");
     // 実行ボタン
-    var btn_run = document.getElementById("w-c-h-bf-label");
+    let btn_run = document.getElementById("w-c-h-bf-label");
     // エンコードボタン
-    var rad_encode = document.getElementById("w-c-h-rad-encode")
+    let rad_encode = document.getElementById("w-c-h-rad-encode")
     //  デコードボタン;
-    var rad_decode = document.getElementById("w-c-h-rad-decode");
+    let rad_decode = document.getElementById("w-c-h-rad-decode");
     // アップロードファイル
     let uploadFile;
-    // ファイル読み込みクラス
-    let reader = new FileReader();
 
     // Event : ファイル読み込み
+    let reader = new FileReader();
     reader.addEventListener("load", function() {
         txt_result.value = reader.result;
     });
@@ -63,6 +62,7 @@ window.onload = function() {
     });
 }
 
+// ヴァリデーションチェック
 var validCheck = function (event) {
     if (isNothing(document.getElementById("w-c-h-text-file").value)) {
         alert("ファイルが未選択！");
@@ -85,10 +85,10 @@ var validCheck = function (event) {
     return true;
 }
 
+// 実行
 var run = function(textFile, shift, loop, mode) {
     let val = document.getElementById("w-c-b-textarea").value;
     let result;
-
     if (mode === "ENCODE") result = caesarEncoding(val, shift, loop);
     if (mode === "DECODE") result = caesarDecoding(val, shift, loop);
 
