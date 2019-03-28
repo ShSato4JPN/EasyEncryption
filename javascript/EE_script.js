@@ -1,7 +1,7 @@
 /*** EasyEncryptionのロジック ***/
 window.onload = function() {
     // ファイル選択フォーム
-    var input_form = document.getElementById("w-c-h-file-input-form");
+    let input_form = document.getElementById("w-c-h-file-input-form");
     // ファイルのパス
     let txt_file = document.getElementById("w-c-h-text-file");
     // シフト数
