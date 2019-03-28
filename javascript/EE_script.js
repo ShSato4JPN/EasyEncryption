@@ -86,8 +86,8 @@ var validCheck = function (event) {
 }
 
 var run = function(textFile, shift, loop, mode) {
-    let result;
     let val = document.getElementById("w-c-b-textarea").value;
+    let result;
 
     if (mode === "ENCODE") result = caesarEncoding(val, shift, loop);
     if (mode === "DECODE") result = caesarDecoding(val, shift, loop);

@@ -2,15 +2,18 @@
 var caesarEncoding = function(text, shift, loop) {
     let rows = text.split(/\r\n|\r|\n/);
     let result = "";
-    for (var row_cnt = 0;  row_cnt < rows.length;  row_cnt++) {
-        let row  = encodeURIComponent(rows[row_cnt]);
-        for (var l_cnt = 0; l_cnt < loop; l_cnt++) {
-            for (var i = 0; i < row.length; i++) {
-                result += String.fromCharCode(row.charCodeAt(i) + parseInt(shift));
+    let buff = "";
+    for (var row_idx = 0;  row_idx < rows.length;  row_idx++) {
+        let row  = encodeURIComponent(rows[row_idx]);
+
+        for (var l_idx = 0; l_idx < loop; l_idx++) {
+            for (var chr_idx = 0; chr_idx < row.length; chr_idx++) {
+                buff += String.fromCharCode(row.charCodeAt(chr_idx) + parseInt(shift));
             }
-            result += result + "\n";
-            row = result;
+            row = buff;
+            buff = "";
         }
+        result += row + "\n";
     }
 
     return result;
@@ -20,15 +23,18 @@ var caesarEncoding = function(text, shift, loop) {
 var caesarDecoding = function(text, shift, loop) {
     let rows = text.split(/\r\n|\r|\n/);
     let result = "";
-    for (var row_cnt = 0;  row_cnt < rows.length;  row_cnt++) {
-        let row  = encodeURIComponent(rows[row_cnt]);
-        for (var l_cnt = 0; l_cnt < loop; l_cnt++) {
-            for (var i = 0; i < row.length; i++) {
-                result += String.fromCharCode(row.charCodeAt(i) - parseInt(shift));
+    let buff = "";
+    for (var row_idx = 0;  row_idx < rows.length;  row_idx++) {
+        let row = rows[row_idx];
+
+        for (var l_idx = 0; l_idx < loop; l_idx++) {
+            for (var chr_idx = 0; chr_idx < row.length; chr_idx++) {
+                buff += String.fromCharCode(row.charCodeAt(chr_idx) - parseInt(shift));
             }
-            result += result + "\n";
-            row = result;
+            row = buff;
+            buff = "";
         }
+        result +=  decodeURIComponent(row) + "\n" ;
     }
 
     return result;
