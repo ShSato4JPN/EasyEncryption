@@ -53,8 +53,8 @@ window.onload = function() {
     btn_run.addEventListener("click", function(event) {
         if (validCheck(event)) {
             if (window.confirm("実行しますか")) {
-                if (rad_encode.checked)  run(uploadFile[0], txt_shift.value, txt_loop.value, "ENCODE");
-                if (rad_decode.checked)  run(uploadFile[0], txt_shift.value, txt_loop.value, "DECODE");
+                if (rad_encode.checked)  run(txt_shift.value, txt_loop.value, "ENCODE");
+                if (rad_decode.checked)  run(txt_shift.value, txt_loop.value, "DECODE");
             }
             // labelとbuttonのイベントが呼ばれるので一回目でバブリングを中止する
             finishBabbling(event);
@@ -64,11 +64,6 @@ window.onload = function() {
 
 // ヴァリデーションチェック
 var validCheck = function (event) {
-    if (isNothing(document.getElementById("w-c-h-text-file").value)) {
-        alert("ファイルが未選択！");
-        finishBabbling(event);
-        return false;
-    }
 
     if (isNothing(document.getElementById("w-c-h-text-shift").value)) {
         alert("SHIFTが未選択！");
@@ -86,7 +81,7 @@ var validCheck = function (event) {
 }
 
 // 実行
-var run = function(textFile, shift, loop, mode) {
+var run = function(shift, loop, mode) {
     let val = document.getElementById("w-c-b-textarea").value;
     let result;
     if (mode === "ENCODE") result = caesarEncoding(val, shift, loop);
